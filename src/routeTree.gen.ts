@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrototypeSettingsRouteImport } from './routes/prototype.settings'
 import { Route as PrototypePagesRouteImport } from './routes/prototype.pages'
 import { Route as PrototypeGalleryRouteImport } from './routes/prototype.gallery'
+import { Route as PrototypeDesignSystemRouteImport } from './routes/prototype.design-system'
 import { Route as PrototypeDashboardRouteImport } from './routes/prototype.dashboard'
 import { Route as PrototypePagesEditRouteImport } from './routes/prototype.pages.edit'
 
@@ -36,6 +37,11 @@ const PrototypeGalleryRoute = PrototypeGalleryRouteImport.update({
   path: '/prototype/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrototypeDesignSystemRoute = PrototypeDesignSystemRouteImport.update({
+  id: '/prototype/design-system',
+  path: '/prototype/design-system',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrototypeDashboardRoute = PrototypeDashboardRouteImport.update({
   id: '/prototype/dashboard',
   path: '/prototype/dashboard',
@@ -50,6 +56,7 @@ const PrototypePagesEditRoute = PrototypePagesEditRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
@@ -58,6 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
@@ -67,6 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
@@ -77,6 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/prototype/dashboard'
+    | '/prototype/design-system'
     | '/prototype/gallery'
     | '/prototype/pages'
     | '/prototype/settings'
@@ -85,6 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/prototype/dashboard'
+    | '/prototype/design-system'
     | '/prototype/gallery'
     | '/prototype/pages'
     | '/prototype/settings'
@@ -93,6 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/prototype/dashboard'
+    | '/prototype/design-system'
     | '/prototype/gallery'
     | '/prototype/pages'
     | '/prototype/settings'
@@ -102,6 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrototypeDashboardRoute: typeof PrototypeDashboardRoute
+  PrototypeDesignSystemRoute: typeof PrototypeDesignSystemRoute
   PrototypeGalleryRoute: typeof PrototypeGalleryRoute
   PrototypePagesRoute: typeof PrototypePagesRouteWithChildren
   PrototypeSettingsRoute: typeof PrototypeSettingsRoute
@@ -137,6 +150,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrototypeGalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prototype/design-system': {
+      id: '/prototype/design-system'
+      path: '/prototype/design-system'
+      fullPath: '/prototype/design-system'
+      preLoaderRoute: typeof PrototypeDesignSystemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/prototype/dashboard': {
       id: '/prototype/dashboard'
       path: '/prototype/dashboard'
@@ -169,6 +189,7 @@ const PrototypePagesRouteWithChildren = PrototypePagesRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrototypeDashboardRoute: PrototypeDashboardRoute,
+  PrototypeDesignSystemRoute: PrototypeDesignSystemRoute,
   PrototypeGalleryRoute: PrototypeGalleryRoute,
   PrototypePagesRoute: PrototypePagesRouteWithChildren,
   PrototypeSettingsRoute: PrototypeSettingsRoute,
@@ -176,3 +197,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
