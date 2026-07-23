@@ -10,33 +10,101 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PrototypeSettingsRouteImport } from './routes/prototype.settings'
+import { Route as PrototypePagesRouteImport } from './routes/prototype.pages'
+import { Route as PrototypeGalleryRouteImport } from './routes/prototype.gallery'
+import { Route as PrototypeDashboardRouteImport } from './routes/prototype.dashboard'
+import { Route as PrototypePagesEditRouteImport } from './routes/prototype.pages.edit'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrototypeSettingsRoute = PrototypeSettingsRouteImport.update({
+  id: '/prototype/settings',
+  path: '/prototype/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypePagesRoute = PrototypePagesRouteImport.update({
+  id: '/prototype/pages',
+  path: '/prototype/pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypeGalleryRoute = PrototypeGalleryRouteImport.update({
+  id: '/prototype/gallery',
+  path: '/prototype/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypeDashboardRoute = PrototypeDashboardRouteImport.update({
+  id: '/prototype/dashboard',
+  path: '/prototype/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypePagesEditRoute = PrototypePagesEditRouteImport.update({
+  id: '/edit',
+  path: '/edit',
+  getParentRoute: () => PrototypePagesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/pages': typeof PrototypePagesRouteWithChildren
+  '/prototype/settings': typeof PrototypeSettingsRoute
+  '/prototype/pages/edit': typeof PrototypePagesEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/pages': typeof PrototypePagesRouteWithChildren
+  '/prototype/settings': typeof PrototypeSettingsRoute
+  '/prototype/pages/edit': typeof PrototypePagesEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/prototype/dashboard': typeof PrototypeDashboardRoute
+  '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/pages': typeof PrototypePagesRouteWithChildren
+  '/prototype/settings': typeof PrototypeSettingsRoute
+  '/prototype/pages/edit': typeof PrototypePagesEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/prototype/dashboard'
+    | '/prototype/gallery'
+    | '/prototype/pages'
+    | '/prototype/settings'
+    | '/prototype/pages/edit'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/prototype/dashboard'
+    | '/prototype/gallery'
+    | '/prototype/pages'
+    | '/prototype/settings'
+    | '/prototype/pages/edit'
+  id:
+    | '__root__'
+    | '/'
+    | '/prototype/dashboard'
+    | '/prototype/gallery'
+    | '/prototype/pages'
+    | '/prototype/settings'
+    | '/prototype/pages/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrototypeDashboardRoute: typeof PrototypeDashboardRoute
+  PrototypeGalleryRoute: typeof PrototypeGalleryRoute
+  PrototypePagesRoute: typeof PrototypePagesRouteWithChildren
+  PrototypeSettingsRoute: typeof PrototypeSettingsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +116,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prototype/settings': {
+      id: '/prototype/settings'
+      path: '/prototype/settings'
+      fullPath: '/prototype/settings'
+      preLoaderRoute: typeof PrototypeSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/pages': {
+      id: '/prototype/pages'
+      path: '/prototype/pages'
+      fullPath: '/prototype/pages'
+      preLoaderRoute: typeof PrototypePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/gallery': {
+      id: '/prototype/gallery'
+      path: '/prototype/gallery'
+      fullPath: '/prototype/gallery'
+      preLoaderRoute: typeof PrototypeGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/dashboard': {
+      id: '/prototype/dashboard'
+      path: '/prototype/dashboard'
+      fullPath: '/prototype/dashboard'
+      preLoaderRoute: typeof PrototypeDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/pages/edit': {
+      id: '/prototype/pages/edit'
+      path: '/edit'
+      fullPath: '/prototype/pages/edit'
+      preLoaderRoute: typeof PrototypePagesEditRouteImport
+      parentRoute: typeof PrototypePagesRoute
+    }
   }
 }
 
+interface PrototypePagesRouteChildren {
+  PrototypePagesEditRoute: typeof PrototypePagesEditRoute
+}
+
+const PrototypePagesRouteChildren: PrototypePagesRouteChildren = {
+  PrototypePagesEditRoute: PrototypePagesEditRoute,
+}
+
+const PrototypePagesRouteWithChildren = PrototypePagesRoute._addFileChildren(
+  PrototypePagesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrototypeDashboardRoute: PrototypeDashboardRoute,
+  PrototypeGalleryRoute: PrototypeGalleryRoute,
+  PrototypePagesRoute: PrototypePagesRouteWithChildren,
+  PrototypeSettingsRoute: PrototypeSettingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
