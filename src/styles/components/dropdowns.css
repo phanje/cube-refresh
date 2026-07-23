@@ -1,0 +1,20 @@
+.dropdown-menu {
+  --bs-dropdown-border-color: var(--cube-border-color);
+  --bs-dropdown-border-radius: var(--cube-radius-md);
+  --bs-dropdown-link-hover-bg: var(--cube-surface-muted);
+  --bs-dropdown-link-active-bg: var(--cube-brand-primary-subtle);
+  --bs-dropdown-link-active-color: var(--cube-brand-primary);
+  --bs-dropdown-padding-y: 6px;
+  --bs-dropdown-font-size: 13px;
+  box-shadow: var(--cube-shadow-md);
+}
+.dropdown-item {
+  padding: 7px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cube-text-primary);
+}
+.dropdown-item.is-danger { color: var(--cube-danger); }
+.dropdown-item.is-danger:hover { background: var(--cube-danger-subtle); color: var(--cube-danger); }
+.dropdown-divider { border-color: var(--cube-border-color); margin: 4px 0; }

@@ -1,0 +1,17 @@
+.cube-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--cube-text-secondary);
+}
+.cube-empty__icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--cube-surface-muted);
+  color: var(--cube-text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.cube-empty__title { font-size: 15px; font-weight: 600; color: var(--cube-text-primary); margin: 0 0 4px; }
+.cube-empty__desc { font-size: 13px; color: var(--cube-text-muted); max-width: 360px; margin: 0 auto 16px; }

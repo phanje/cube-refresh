@@ -1,0 +1,22 @@
+.cube-save-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--cube-surface-bg);
+  border-top: 1px solid var(--cube-border-color);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 -4px 12px rgba(24, 39, 51, 0.04);
+  z-index: 10;
+}
+.cube-save-bar__status {
+  font-size: 12.5px;
+  color: var(--cube-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.cube-save-bar__spacer { flex: 1; }

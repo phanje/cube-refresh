@@ -1,0 +1,22 @@
+.cube-skeleton {
+  display: block;
+  background: linear-gradient(90deg, var(--cube-surface-muted) 0%, var(--cube-surface-hover) 50%, var(--cube-surface-muted) 100%);
+  background-size: 200% 100%;
+  animation: cube-shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--cube-radius-sm);
+  height: 12px;
+  width: 100%;
+}
+@keyframes cube-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.cube-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid var(--cube-border-color-strong);
+  border-top-color: var(--cube-brand-primary);
+  border-radius: 50%;
+  animation: cube-spin 0.7s linear infinite;
+  display: inline-block;
+}

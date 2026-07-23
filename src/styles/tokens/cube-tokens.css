@@ -1,0 +1,79 @@
+/* Cube semantic tokens — single source of truth. */
+:root {
+  /* Brand */
+  --cube-brand-primary: #dc007e;
+  --cube-brand-primary-hover: #b80069;
+  --cube-brand-primary-active: #9c0058;
+  --cube-brand-primary-subtle: #fce6f1;
+  --cube-brand-primary-contrast: #ffffff;
+
+  /* Surfaces */
+  --cube-page-bg: #f5f7fa;
+  --cube-surface-bg: #ffffff;
+  --cube-surface-muted: #f0f2f5;
+  --cube-surface-hover: #eef1f5;
+  --cube-sidebar-bg: #182733;
+  --cube-sidebar-hover: #223649;
+  --cube-sidebar-active: #294257;
+  --cube-header-bg: #ffffff;
+
+  /* Text */
+  --cube-text-primary: #182733;
+  --cube-text-secondary: #4a5a6b;
+  --cube-text-muted: #7a8899;
+  --cube-text-disabled: #b0bac4;
+  --cube-text-inverse: #ffffff;
+  --cube-text-on-dark: #e6ecf2;
+  --cube-text-on-dark-muted: #8fa0b3;
+
+  /* Borders */
+  --cube-border-color: #e3e7ec;
+  --cube-border-color-strong: #c7cfd8;
+  --cube-border-color-dark: rgba(255, 255, 255, 0.08);
+
+  /* Semantic */
+  --cube-success: #1f9d6b;
+  --cube-success-subtle: #e4f5ec;
+  --cube-info: #2a7fb8;
+  --cube-info-subtle: #cdedeb;
+  --cube-warning: #c58a00;
+  --cube-warning-subtle: #fbefc7;
+  --cube-danger: #c8322a;
+  --cube-danger-subtle: #f9e4e2;
+  --cube-danger-hover: #a4271f;
+
+  /* Radius */
+  --cube-radius-sm: 6px;
+  --cube-radius-md: 8px;
+  --cube-radius-lg: 12px;
+  --cube-radius-pill: 999px;
+
+  /* Shadows */
+  --cube-shadow-sm: 0 1px 2px rgba(24, 39, 51, 0.06);
+  --cube-shadow-md: 0 4px 12px rgba(24, 39, 51, 0.08);
+  --cube-shadow-lg: 0 12px 32px rgba(24, 39, 51, 0.14);
+  --cube-focus-ring: 0 0 0 3px rgba(220, 0, 126, 0.25);
+
+  /* Motion */
+  --cube-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --cube-transition-fast: 120ms var(--cube-easing-standard);
+  --cube-transition-default: 200ms var(--cube-easing-standard);
+
+  /* Spacing scale (informational — use directly) */
+  --cube-space-1: 4px;
+  --cube-space-2: 8px;
+  --cube-space-3: 12px;
+  --cube-space-4: 16px;
+  --cube-space-5: 20px;
+  --cube-space-6: 24px;
+  --cube-space-8: 32px;
+
+  /* Typography */
+  --cube-font-sans: system-ui, -apple-system, "Segoe UI", Inter, "Helvetica Neue", Arial, sans-serif;
+  --cube-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Sizing */
+  --cube-sidebar-width: 244px;
+  --cube-sidebar-width-compact: 64px;
+  --cube-header-height: 56px;
+}

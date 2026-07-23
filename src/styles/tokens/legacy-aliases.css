@@ -1,0 +1,41 @@
+/* Legacy custom variable compatibility layer.
+   Do not remove or rename — kept as aliases so existing Cube CSS keeps working
+   while pages migrate to --cube-* tokens.
+
+   Variables marked TODO have ambiguous semantics from color alone. Their
+   real role must be confirmed against the existing CMS code before being
+   accorpated into a single token. */
+:root {
+  /* Brand */
+  --blast-color: var(--cube-brand-primary);
+  --primary: var(--cube-brand-primary);
+  --blast-color-hover: var(--cube-brand-primary-hover);
+  --primaryHover: var(--cube-brand-primary-hover);
+  --primaryLight: var(--cube-brand-primary-subtle);
+  --blast-color-btn-text: var(--cube-brand-primary-contrast);
+  --blast-color-icone: var(--cube-brand-primary);
+  --blast-bg-light: var(--cube-brand-primary-subtle);
+  --blast-bg-light-hover: #f8d1e3;
+
+  /* Dark scale */
+  --dark-color: var(--cube-sidebar-bg);
+  --dark-color-soft: var(--cube-sidebar-active);
+  --fa-color-dark: var(--cube-text-primary); /* TODO: verify in existing CMS */
+
+  /* Neutral scale */
+  --mainLight: var(--cube-surface-bg);
+  --mainDark: var(--cube-text-primary);
+  --light1: var(--cube-page-bg);      /* TODO: verify vs surface-muted */
+  --light2: var(--cube-surface-muted);/* TODO: verify */
+  --light3: var(--cube-surface-hover);/* TODO: verify */
+  --light4: var(--cube-border-color);
+
+  /* Semantic legacy */
+  --azzurro: var(--cube-info-subtle);
+  --blu: var(--cube-info);             /* TODO: verify vs --azzurro role */
+  --giallo: var(--cube-warning);
+  --gialloChiaro: var(--cube-warning-subtle);
+
+  /* Motion */
+  --cubic: var(--cube-easing-standard);
+}

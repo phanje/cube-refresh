@@ -1,0 +1,32 @@
+.nav-tabs {
+  --bs-nav-tabs-border-color: var(--cube-border-color);
+  --bs-nav-tabs-border-width: 1px;
+  --bs-nav-tabs-border-radius: 0;
+  --bs-nav-tabs-link-active-color: var(--cube-brand-primary);
+  --bs-nav-tabs-link-active-bg: transparent;
+  --bs-nav-tabs-link-active-border-color: transparent transparent var(--cube-brand-primary);
+  --bs-nav-tabs-link-hover-border-color: transparent;
+  border-bottom: 1px solid var(--cube-border-color);
+  gap: 4px;
+}
+.nav-tabs .nav-link {
+  color: var(--cube-text-secondary);
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 10px 14px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  margin-bottom: -1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--cube-transition-fast), border-color var(--cube-transition-fast);
+}
+.nav-tabs .nav-link:hover { color: var(--cube-text-primary); border-bottom-color: var(--cube-border-color-strong); }
+.nav-tabs .nav-link.active {
+  color: var(--cube-brand-primary);
+  border-bottom-color: var(--cube-brand-primary);
+  background: transparent;
+}
+.nav-tabs .nav-link:focus-visible { box-shadow: var(--cube-focus-ring); outline: none; }
