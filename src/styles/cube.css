@@ -1,0 +1,22 @@
+/* Cube CMS design system — single entry, imports token and component layers. */
+@import "./tokens/cube-tokens.css";
+@import "./tokens/bootstrap-mapping.css";
+@import "./tokens/legacy-aliases.css";
+@import "./base/typography.css";
+@import "./base/layout.css";
+@import "./components/sidebar.css";
+@import "./components/header.css";
+@import "./components/buttons.css";
+@import "./components/forms.css";
+@import "./components/tables.css";
+@import "./components/navigation.css";
+@import "./components/tabs.css";
+@import "./components/dropdowns.css";
+@import "./components/modals.css";
+@import "./components/alerts.css";
+@import "./components/badges.css";
+@import "./components/pagination.css";
+@import "./components/save-bar.css";
+@import "./components/empty-state.css";
+@import "./components/skeleton.css";
+@import "./pages/page-specific-overrides.css";

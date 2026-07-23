@@ -1,0 +1,105 @@
+/* One button family, five variants. Overrides Bootstrap defaults for consistency. */
+.btn {
+  --bs-btn-padding-x: 14px;
+  --bs-btn-padding-y: 7px;
+  --bs-btn-font-size: 13.5px;
+  --bs-btn-font-weight: 500;
+  --bs-btn-border-radius: var(--cube-radius-md);
+  --bs-btn-line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background var(--cube-transition-fast), color var(--cube-transition-fast), border-color var(--cube-transition-fast), box-shadow var(--cube-transition-fast);
+}
+.btn:focus-visible { box-shadow: var(--cube-focus-ring); outline: none; }
+.btn:disabled, .btn.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary {
+  --bs-btn-color: var(--cube-brand-primary-contrast);
+  --bs-btn-bg: var(--cube-brand-primary);
+  --bs-btn-border-color: var(--cube-brand-primary);
+  --bs-btn-hover-color: var(--cube-brand-primary-contrast);
+  --bs-btn-hover-bg: var(--cube-brand-primary-hover);
+  --bs-btn-hover-border-color: var(--cube-brand-primary-hover);
+  --bs-btn-active-bg: var(--cube-brand-primary-active);
+  --bs-btn-active-border-color: var(--cube-brand-primary-active);
+  --bs-btn-disabled-bg: var(--cube-brand-primary);
+  --bs-btn-disabled-border-color: var(--cube-brand-primary);
+}
+
+.btn-secondary,
+.btn-outline-secondary {
+  --bs-btn-color: var(--cube-text-primary);
+  --bs-btn-bg: var(--cube-surface-bg);
+  --bs-btn-border-color: var(--cube-border-color-strong);
+  --bs-btn-hover-color: var(--cube-text-primary);
+  --bs-btn-hover-bg: var(--cube-surface-muted);
+  --bs-btn-hover-border-color: var(--cube-border-color-strong);
+  --bs-btn-active-bg: var(--cube-surface-hover);
+  --bs-btn-active-border-color: var(--cube-border-color-strong);
+  --bs-btn-disabled-color: var(--cube-text-muted);
+  --bs-btn-disabled-bg: var(--cube-surface-bg);
+  --bs-btn-disabled-border-color: var(--cube-border-color);
+}
+
+.btn-ghost {
+  --bs-btn-color: var(--cube-text-secondary);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: var(--cube-text-primary);
+  --bs-btn-hover-bg: var(--cube-surface-muted);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-bg: var(--cube-surface-hover);
+  --bs-btn-active-border-color: transparent;
+}
+
+.btn-danger {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--cube-danger);
+  --bs-btn-border-color: var(--cube-danger);
+  --bs-btn-hover-bg: var(--cube-danger-hover);
+  --bs-btn-hover-border-color: var(--cube-danger-hover);
+  --bs-btn-active-bg: var(--cube-danger-hover);
+  --bs-btn-active-border-color: var(--cube-danger-hover);
+}
+
+.btn-outline-danger {
+  --bs-btn-color: var(--cube-danger);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--cube-danger);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--cube-danger);
+  --bs-btn-hover-border-color: var(--cube-danger);
+}
+
+.btn-sm {
+  --bs-btn-padding-x: 10px;
+  --bs-btn-padding-y: 4px;
+  --bs-btn-font-size: 12.5px;
+}
+
+/* Icon-only button */
+.btn-icon {
+  width: 32px; height: 32px;
+  padding: 0;
+  border-radius: var(--cube-radius-sm);
+}
+.btn-icon.btn-sm { width: 28px; height: 28px; }
+
+/* Loading */
+.btn.is-loading { position: relative; color: transparent !important; pointer-events: none; }
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  width: 14px; height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: cube-spin 0.7s linear infinite;
+  color: var(--cube-brand-primary-contrast);
+}
+.btn-secondary.is-loading::after,
+.btn-ghost.is-loading::after { color: var(--cube-text-primary); }
+
+@keyframes cube-spin { to { transform: rotate(360deg); } }

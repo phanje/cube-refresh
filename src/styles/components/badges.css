@@ -1,0 +1,31 @@
+.cube-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--cube-radius-pill);
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.5;
+  background: var(--cube-surface-muted);
+  color: var(--cube-text-secondary);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.cube-badge__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+  opacity: 0.9;
+}
+.cube-badge.is-success { background: var(--cube-success-subtle); color: var(--cube-success); }
+.cube-badge.is-info    { background: var(--cube-info-subtle);    color: var(--cube-info); }
+.cube-badge.is-warning { background: var(--cube-warning-subtle); color: #7a5600; }
+.cube-badge.is-danger  { background: var(--cube-danger-subtle);  color: var(--cube-danger); }
+.cube-badge.is-neutral { background: var(--cube-surface-muted);  color: var(--cube-text-secondary); }
+.cube-badge.is-brand   { background: var(--cube-brand-primary-subtle); color: var(--cube-brand-primary); }
+
+.cube-badge--type {
+  padding: 3px 10px;
+  font-weight: 600;
+  font-size: 11px;
+}

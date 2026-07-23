@@ -1,0 +1,93 @@
+.cube-header {
+  height: var(--cube-header-height);
+  background: var(--cube-header-bg);
+  border-bottom: 1px solid var(--cube-border-color);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.cube-header__toggle {
+  border: 0;
+  background: transparent;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--cube-radius-sm);
+  color: var(--cube-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.cube-header__toggle:hover { background: var(--cube-surface-muted); color: var(--cube-text-primary); }
+
+.cube-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--cube-text-secondary);
+  min-width: 0;
+}
+.cube-breadcrumb__item { color: var(--cube-text-secondary); }
+.cube-breadcrumb__item.is-current { color: var(--cube-text-primary); font-weight: 500; }
+.cube-breadcrumb__sep { color: var(--cube-text-muted); font-size: 12px; }
+
+.cube-header__spacer { flex: 1; }
+
+.cube-site-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  background: var(--cube-surface-muted);
+  border: 1px solid var(--cube-border-color);
+  border-radius: var(--cube-radius-pill);
+  font-size: 12.5px;
+  color: var(--cube-text-primary);
+  cursor: pointer;
+  transition: background var(--cube-transition-fast);
+}
+.cube-site-picker:hover { background: var(--cube-surface-hover); }
+.cube-site-picker__dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cube-success);
+}
+
+.cube-icon-btn {
+  width: 32px; height: 32px;
+  border-radius: var(--cube-radius-sm);
+  border: 0;
+  background: transparent;
+  color: var(--cube-text-secondary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: background var(--cube-transition-fast), color var(--cube-transition-fast);
+}
+.cube-icon-btn:hover { background: var(--cube-surface-muted); color: var(--cube-text-primary); }
+.cube-icon-btn__dot {
+  position: absolute; top: 6px; right: 7px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cube-brand-primary);
+  border: 2px solid var(--cube-header-bg);
+}
+
+.cube-avatar {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--cube-sidebar-active);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

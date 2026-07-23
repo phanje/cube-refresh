@@ -1,0 +1,17 @@
+.pagination {
+  --bs-pagination-color: var(--cube-text-secondary);
+  --bs-pagination-bg: var(--cube-surface-bg);
+  --bs-pagination-border-color: var(--cube-border-color);
+  --bs-pagination-hover-color: var(--cube-text-primary);
+  --bs-pagination-hover-bg: var(--cube-surface-muted);
+  --bs-pagination-hover-border-color: var(--cube-border-color);
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: var(--cube-brand-primary);
+  --bs-pagination-active-border-color: var(--cube-brand-primary);
+  --bs-pagination-border-radius: var(--cube-radius-sm);
+  --bs-pagination-padding-x: 10px;
+  --bs-pagination-padding-y: 4px;
+  --bs-pagination-font-size: 12.5px;
+  gap: 2px;
+}
+.pagination .page-link { border-radius: var(--cube-radius-sm) !important; margin: 0; }

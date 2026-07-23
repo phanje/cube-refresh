@@ -1,0 +1,41 @@
+/* Map Bootstrap 5.3 CSS variables onto Cube tokens. */
+:root,
+[data-bs-theme="light"] {
+  --bs-primary: var(--cube-brand-primary);
+  --bs-primary-rgb: 220, 0, 126;
+  --bs-secondary: var(--cube-text-secondary);
+  --bs-success: var(--cube-success);
+  --bs-info: var(--cube-info);
+  --bs-warning: var(--cube-warning);
+  --bs-danger: var(--cube-danger);
+  --bs-light: var(--cube-surface-muted);
+  --bs-dark: var(--cube-sidebar-bg);
+
+  --bs-body-bg: var(--cube-page-bg);
+  --bs-body-color: var(--cube-text-primary);
+  --bs-emphasis-color: var(--cube-text-primary);
+  --bs-secondary-color: var(--cube-text-secondary);
+  --bs-secondary-bg: var(--cube-surface-muted);
+  --bs-tertiary-color: var(--cube-text-muted);
+  --bs-tertiary-bg: var(--cube-surface-bg);
+
+  --bs-link-color: var(--cube-brand-primary);
+  --bs-link-hover-color: var(--cube-brand-primary-hover);
+  --bs-link-color-rgb: 220, 0, 126;
+  --bs-link-hover-color-rgb: 184, 0, 105;
+
+  --bs-border-color: var(--cube-border-color);
+  --bs-border-radius: var(--cube-radius-md);
+  --bs-border-radius-sm: var(--cube-radius-sm);
+  --bs-border-radius-lg: var(--cube-radius-lg);
+
+  --bs-box-shadow: var(--cube-shadow-md);
+  --bs-box-shadow-sm: var(--cube-shadow-sm);
+  --bs-box-shadow-lg: var(--cube-shadow-lg);
+
+  --bs-focus-ring-color: rgba(220, 0, 126, 0.25);
+  --bs-focus-ring-width: 3px;
+
+  --bs-form-valid-color: var(--cube-success);
+  --bs-form-invalid-color: var(--cube-danger);
+}

@@ -1,0 +1,13 @@
+.alert {
+  --bs-alert-border-radius: var(--cube-radius-md);
+  border: 1px solid transparent;
+  padding: 10px 14px;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.alert-info    { background: var(--cube-info-subtle);    color: var(--cube-info);    border-color: color-mix(in oklab, var(--cube-info) 25%, transparent); }
+.alert-success { background: var(--cube-success-subtle); color: var(--cube-success); border-color: color-mix(in oklab, var(--cube-success) 25%, transparent); }
+.alert-warning { background: var(--cube-warning-subtle); color: #7a5600; border-color: color-mix(in oklab, var(--cube-warning) 30%, transparent); }
+.alert-danger  { background: var(--cube-danger-subtle);  color: var(--cube-danger);  border-color: color-mix(in oklab, var(--cube-danger) 25%, transparent); }

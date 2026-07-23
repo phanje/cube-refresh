@@ -1,0 +1,49 @@
+body {
+  font-family: var(--cube-font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cube-text-primary);
+  background: var(--cube-page-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cube-page-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--cube-text-primary);
+  line-height: 1.2;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cube-page-subtitle {
+  font-size: 13px;
+  color: var(--cube-text-secondary);
+  margin: 4px 0 0;
+}
+
+.cube-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cube-text-muted);
+  margin: 0 0 12px;
+}
+
+.cube-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cube-text-muted);
+}
+
+.cube-mono {
+  font-family: var(--cube-font-mono);
+  font-size: 12px;
+}
+
+a { color: var(--cube-brand-primary); text-decoration: none; }
+a:hover { color: var(--cube-brand-primary-hover); text-decoration: underline; }
