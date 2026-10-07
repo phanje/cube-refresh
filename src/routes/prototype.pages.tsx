@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, Outlet, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
 import { Shell, PageHeader } from "@/components/cube/Shell";
 import { Badge, LangFlags } from "@/components/cube/atoms";
@@ -11,10 +11,17 @@ export const Route = createFileRoute("/prototype/pages")({
       { name: "description", content: "Elenco delle pagine del sito con filtri e azioni." },
       { property: "og:title", content: "Lista pagine — Cube CMS" },
       { property: "og:description", content: "Elenco delle pagine del sito con filtri e azioni." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: PagesList,
+  component: PagesRoute,
 });
+
+function PagesRoute() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  return pathname === "/prototype/pages" ? <PagesList /> : <Outlet />;
+}
 
 const PAGES = [
   { name: "(reference) Camera Interna 1", url: "it/prova-camera-interna-1", model: "Camera Interna", status: "pubblica", langs: ["it","en","fr","de","es"], date: "22-07-2026 10:18", user: "De Gennaro Stefania" },

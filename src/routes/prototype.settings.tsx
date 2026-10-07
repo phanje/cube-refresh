@@ -10,6 +10,8 @@ export const Route = createFileRoute("/prototype/settings")({
       { name: "description", content: "Impostazioni di aspetto del sito." },
       { property: "og:title", content: "Aspetto — Cube CMS" },
       { property: "og:description", content: "Impostazioni di aspetto del sito." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: SettingsPage,

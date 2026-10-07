@@ -10,6 +10,8 @@ export const Route = createFileRoute("/prototype/dashboard")({
       { name: "description", content: "Panoramica del sito con statistiche e accessi rapidi." },
       { property: "og:title", content: "Bacheca — Cube CMS" },
       { property: "og:description", content: "Panoramica del sito con statistiche e accessi rapidi." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Dashboard,

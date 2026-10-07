@@ -13,6 +13,8 @@ export const Route = createFileRoute("/prototype/design-system")({
       { name: "description", content: "Token, componenti, mapping variabili e regole di utilizzo." },
       { property: "og:title", content: "Design System — Cube CMS" },
       { property: "og:description", content: "Token, componenti, mapping variabili e regole di utilizzo." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: DesignSystem,
