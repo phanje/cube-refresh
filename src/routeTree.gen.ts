@@ -10,12 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PrototypeSettingsRouteImport } from './routes/prototype.settings'
-import { Route as PrototypePagesRouteImport } from './routes/prototype.pages'
-import { Route as PrototypeMediaRouteImport } from './routes/prototype.media'
-import { Route as PrototypeGalleryRouteImport } from './routes/prototype.gallery'
-import { Route as PrototypeDesignSystemRouteImport } from './routes/prototype.design-system'
 import { Route as PrototypeDashboardRouteImport } from './routes/prototype.dashboard'
+import { Route as PrototypeDesignSystemRouteImport } from './routes/prototype.design-system'
+import { Route as PrototypeGalleryRouteImport } from './routes/prototype.gallery'
+import { Route as PrototypeMediaRouteImport } from './routes/prototype.media'
+import { Route as PrototypePagesRouteImport } from './routes/prototype.pages'
+import { Route as PrototypeSettingsRouteImport } from './routes/prototype.settings'
 import { Route as PrototypePagesEditRouteImport } from './routes/prototype.pages.edit'
 
 const IndexRoute = IndexRouteImport.update({
@@ -23,24 +23,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrototypeSettingsRoute = PrototypeSettingsRouteImport.update({
-  id: '/prototype/settings',
-  path: '/prototype/settings',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrototypePagesRoute = PrototypePagesRouteImport.update({
-  id: '/prototype/pages',
-  path: '/prototype/pages',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrototypeMediaRoute = PrototypeMediaRouteImport.update({
-  id: '/prototype/media',
-  path: '/prototype/media',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrototypeGalleryRoute = PrototypeGalleryRouteImport.update({
-  id: '/prototype/gallery',
-  path: '/prototype/gallery',
+const PrototypeDashboardRoute = PrototypeDashboardRouteImport.update({
+  id: '/prototype/dashboard',
+  path: '/prototype/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrototypeDesignSystemRoute = PrototypeDesignSystemRouteImport.update({
@@ -48,9 +33,24 @@ const PrototypeDesignSystemRoute = PrototypeDesignSystemRouteImport.update({
   path: '/prototype/design-system',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrototypeDashboardRoute = PrototypeDashboardRouteImport.update({
-  id: '/prototype/dashboard',
-  path: '/prototype/dashboard',
+const PrototypeGalleryRoute = PrototypeGalleryRouteImport.update({
+  id: '/prototype/gallery',
+  path: '/prototype/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypeMediaRoute = PrototypeMediaRouteImport.update({
+  id: '/prototype/media',
+  path: '/prototype/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypePagesRoute = PrototypePagesRouteImport.update({
+  id: '/prototype/pages',
+  path: '/prototype/pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypeSettingsRoute = PrototypeSettingsRouteImport.update({
+  id: '/prototype/settings',
+  path: '/prototype/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrototypePagesEditRoute = PrototypePagesEditRouteImport.update({
@@ -142,32 +142,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/prototype/settings': {
-      id: '/prototype/settings'
-      path: '/prototype/settings'
-      fullPath: '/prototype/settings'
-      preLoaderRoute: typeof PrototypeSettingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prototype/pages': {
-      id: '/prototype/pages'
-      path: '/prototype/pages'
-      fullPath: '/prototype/pages'
-      preLoaderRoute: typeof PrototypePagesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prototype/media': {
-      id: '/prototype/media'
-      path: '/prototype/media'
-      fullPath: '/prototype/media'
-      preLoaderRoute: typeof PrototypeMediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prototype/gallery': {
-      id: '/prototype/gallery'
-      path: '/prototype/gallery'
-      fullPath: '/prototype/gallery'
-      preLoaderRoute: typeof PrototypeGalleryRouteImport
+    '/prototype/dashboard': {
+      id: '/prototype/dashboard'
+      path: '/prototype/dashboard'
+      fullPath: '/prototype/dashboard'
+      preLoaderRoute: typeof PrototypeDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prototype/design-system': {
@@ -177,11 +156,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrototypeDesignSystemRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/prototype/dashboard': {
-      id: '/prototype/dashboard'
-      path: '/prototype/dashboard'
-      fullPath: '/prototype/dashboard'
-      preLoaderRoute: typeof PrototypeDashboardRouteImport
+    '/prototype/gallery': {
+      id: '/prototype/gallery'
+      path: '/prototype/gallery'
+      fullPath: '/prototype/gallery'
+      preLoaderRoute: typeof PrototypeGalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/media': {
+      id: '/prototype/media'
+      path: '/prototype/media'
+      fullPath: '/prototype/media'
+      preLoaderRoute: typeof PrototypeMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/pages': {
+      id: '/prototype/pages'
+      path: '/prototype/pages'
+      fullPath: '/prototype/pages'
+      preLoaderRoute: typeof PrototypePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/settings': {
+      id: '/prototype/settings'
+      path: '/prototype/settings'
+      fullPath: '/prototype/settings'
+      preLoaderRoute: typeof PrototypeSettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prototype/pages/edit': {
