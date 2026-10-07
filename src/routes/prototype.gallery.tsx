@@ -9,6 +9,8 @@ export const Route = createFileRoute("/prototype/gallery")({
       { name: "description", content: "Elenco delle gallery del sito." },
       { property: "og:title", content: "Gallery — Cube CMS" },
       { property: "og:description", content: "Elenco delle gallery del sito." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: GalleryList,

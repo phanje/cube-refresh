@@ -12,6 +12,8 @@ export const Route = createFileRoute("/prototype/pages/edit")({
       { name: "description", content: "Modifica di una pagina del sito." },
       { property: "og:title", content: "Modifica pagina — Cube CMS" },
       { property: "og:description", content: "Modifica di una pagina del sito." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PageEdit,

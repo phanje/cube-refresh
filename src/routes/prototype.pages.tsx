@@ -11,6 +11,8 @@ export const Route = createFileRoute("/prototype/pages")({
       { name: "description", content: "Elenco delle pagine del sito con filtri e azioni." },
       { property: "og:title", content: "Lista pagine — Cube CMS" },
       { property: "og:description", content: "Elenco delle pagine del sito con filtri e azioni." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: PagesList,
