@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrototypeSettingsRouteImport } from './routes/prototype.settings'
 import { Route as PrototypePagesRouteImport } from './routes/prototype.pages'
+import { Route as PrototypeMediaRouteImport } from './routes/prototype.media'
 import { Route as PrototypeGalleryRouteImport } from './routes/prototype.gallery'
 import { Route as PrototypeDesignSystemRouteImport } from './routes/prototype.design-system'
 import { Route as PrototypeDashboardRouteImport } from './routes/prototype.dashboard'
@@ -30,6 +31,11 @@ const PrototypeSettingsRoute = PrototypeSettingsRouteImport.update({
 const PrototypePagesRoute = PrototypePagesRouteImport.update({
   id: '/prototype/pages',
   path: '/prototype/pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrototypeMediaRoute = PrototypeMediaRouteImport.update({
+  id: '/prototype/media',
+  path: '/prototype/media',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrototypeGalleryRoute = PrototypeGalleryRouteImport.update({
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/prototype/dashboard': typeof PrototypeDashboardRoute
   '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/media': typeof PrototypeMediaRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
   '/prototype/pages/edit': typeof PrototypePagesEditRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/prototype/dashboard': typeof PrototypeDashboardRoute
   '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/media': typeof PrototypeMediaRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
   '/prototype/pages/edit': typeof PrototypePagesEditRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/prototype/dashboard': typeof PrototypeDashboardRoute
   '/prototype/design-system': typeof PrototypeDesignSystemRoute
   '/prototype/gallery': typeof PrototypeGalleryRoute
+  '/prototype/media': typeof PrototypeMediaRoute
   '/prototype/pages': typeof PrototypePagesRouteWithChildren
   '/prototype/settings': typeof PrototypeSettingsRoute
   '/prototype/pages/edit': typeof PrototypePagesEditRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/prototype/dashboard'
     | '/prototype/design-system'
     | '/prototype/gallery'
+    | '/prototype/media'
     | '/prototype/pages'
     | '/prototype/settings'
     | '/prototype/pages/edit'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/prototype/dashboard'
     | '/prototype/design-system'
     | '/prototype/gallery'
+    | '/prototype/media'
     | '/prototype/pages'
     | '/prototype/settings'
     | '/prototype/pages/edit'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/prototype/dashboard'
     | '/prototype/design-system'
     | '/prototype/gallery'
+    | '/prototype/media'
     | '/prototype/pages'
     | '/prototype/settings'
     | '/prototype/pages/edit'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   PrototypeDashboardRoute: typeof PrototypeDashboardRoute
   PrototypeDesignSystemRoute: typeof PrototypeDesignSystemRoute
   PrototypeGalleryRoute: typeof PrototypeGalleryRoute
+  PrototypeMediaRoute: typeof PrototypeMediaRoute
   PrototypePagesRoute: typeof PrototypePagesRouteWithChildren
   PrototypeSettingsRoute: typeof PrototypeSettingsRoute
 }
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/prototype/pages'
       fullPath: '/prototype/pages'
       preLoaderRoute: typeof PrototypePagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prototype/media': {
+      id: '/prototype/media'
+      path: '/prototype/media'
+      fullPath: '/prototype/media'
+      preLoaderRoute: typeof PrototypeMediaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prototype/gallery': {
@@ -191,6 +211,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrototypeDashboardRoute: PrototypeDashboardRoute,
   PrototypeDesignSystemRoute: PrototypeDesignSystemRoute,
   PrototypeGalleryRoute: PrototypeGalleryRoute,
+  PrototypeMediaRoute: PrototypeMediaRoute,
   PrototypePagesRoute: PrototypePagesRouteWithChildren,
   PrototypeSettingsRoute: PrototypeSettingsRoute,
 }
