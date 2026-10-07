@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Shell, PageHeader } from "@/components/cube/Shell";
 import { ArrowLeft, Eye, RotateCcw, Sparkles, Image as ImageIcon, Info, Save } from "lucide-react";
+import { useState } from "react";
+import { MediaUpload } from "@/components/cube/MediaUpload";
+import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/prototype/pages/edit")({
   head: () => ({
@@ -15,6 +18,7 @@ export const Route = createFileRoute("/prototype/pages/edit")({
 });
 
 function PageEdit() {
+  const [mediaOpen, setMediaOpen] = useState(false);
   return (
     <Shell
       crumbs={[
@@ -82,7 +86,7 @@ function PageEdit() {
                       </div>
                     ))}
                   </div>
-                  <button className="btn btn-secondary btn-sm mt-3"><ImageIcon size={14} /> Seleziona le immagini</button>
+                  <Button variant="outline" size="sm" className="mt-3" onClick={() => setMediaOpen(true)}><ImageIcon size={14} /> Seleziona le immagini</Button>
                 </div>
 
                 <div className="cube-form-section">
@@ -159,6 +163,7 @@ function PageEdit() {
         </div>
       </div>
 
+      <MediaUpload open={mediaOpen} onOpenChange={setMediaOpen} />
       <div className="cube-save-bar">
         <span className="cube-save-bar__status">
           <span style={{ width: 8, height: 8, borderRadius: 4, background: "var(--cube-warning)" }} />

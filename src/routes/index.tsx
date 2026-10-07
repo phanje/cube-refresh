@@ -4,6 +4,14 @@ import { ArrowRight, LayoutDashboard, FileText, Image, Sparkles, PencilRuler, Cl
 const CUBE_LOGO = "https://cube.blastness.site/assets/images/logo_interno.png";
 
 export const Route = createFileRoute("/")({
+  head: () => ({ meta: [
+    { title: "Cube CMS — Prototipo del redesign" },
+    { name: "description", content: "Schermate e design system del redesign grafico di Cube CMS." },
+    { property: "og:title", content: "Cube CMS — Prototipo del redesign" },
+    { property: "og:description", content: "Schermate e design system del redesign grafico di Cube CMS." },
+    { property: "og:type", content: "website" },
+    { name: "twitter:card", content: "summary_large_image" },
+  ] }),
   component: Landing,
 });
 
